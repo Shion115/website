@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta
+      name="description"
+      content="Tasfia Jannat Tasfi — NLP, trustworthy AI, and software-systems research portfolio."
+    >
+    <meta
+      property="og:title"
+      content="Tasfia Jannat Tasfi — NLP &amp; Trustworthy AI Researcher"
+    >
+    <meta
+      property="og:description"
+      content="Research portfolio of Tasfia Jannat Tasfi."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="IMG_20260121_223602.png">
+    <link rel="canonical" href="https://shion115.github.io/tasfia-nlp-research/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+      rel="stylesheet"
+    >
+    <title>Tasfia Jannat Tasfi — NLP &amp; Trustworthy AI Researcher</title>
+    <style>
+      :root {
+        --ink: #edebe6;
+        --muted: #aaa69f;
+        --dim: #706d67;
+        --gold: #c9a96a;
+        --goldl: #ebcf96;
+        --black: #0c0d0f;
+        --deep: #111318;
+        --card: #181a20;
+        --line: #ffffff1a;
+        --max: 1160px;
+        --nav: 72px;
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "DM Sans", sans-serif;
+        --mono: "DM Mono", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--nav);
+      }
+      body {
+        margin: 0;
+        background: var(--black);
+        color: var(--ink);
+        font: 400 16px/1.72 var(--sans);
+        overflow-x: hidden;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(
+            circle at 82% 8%,
+            #c9a96a14,
+            transparent 27rem
+          ),
+          radial-gradient(circle at 5% 45%, #4b617a1e, transparent 28rem);
+      }
+      ::selection {
+        background: var(--gold);
+        color: #000;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--goldl);
+        outline-offset: 4px;
+      }
+      .wrap {
+        width: min(calc(100% - 3rem), var(--max));
+        margin: auto;
+      }
+      .skip {
+        position: absolute;
+        left: -10000px;
+      }
+      .skip:focus {
+        left: 1rem;
+        top: 1rem;
+        z-index: 99;
+        background: var(--gold);
+        color: #000;
+        padding: 0.6rem 1rem;
+      }
+      .topbar {
+        height: var(--nav);
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 50;
+        background: #0c0d0fe6;
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid transparent;
+        transition: 0.25s;
+      }
+      .topbar.scrolled {
+        border-color: var(--line);
+      }
+      .nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .brand {
+        font: 600 1.25rem var(--serif);
+      }
+      .brand span {
+        color: var(--gold);
+      }
+      .links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .links a {
+        font: 500 0.69rem var(--mono);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--muted);
+        transition: 0.2s;
+      }
+      .links a:hover,
+      .links a.active {
+        color: var(--gold);
+      }
+      .menu {
+        display: none;
+        background: none;
+        border: 0;
+        color: var(--ink);
+        font: 500 0.75rem var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .hero {
+        min-height: 100svh;
+        display: grid;
+        align-items: center;
+        padding: calc(var(--nav) + 4rem) 0 4rem;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .overline,
+      .kicker {
+        font: 500 0.7rem var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .overline:before,
+      .kicker:after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: currentColor;
+      }
+      .hero h1 {
+        font: 500 clamp(3.5rem, 8vw, 6.9rem) / 0.98 var(--serif);
+        letter-spacing: -0.055em;
+        margin: 0.9rem 0 1rem;
+      }
+      .hero h1 em,
+      .headline em {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .subtitle {
+        font: 500 clamp(1rem, 2vw, 1.32rem) / 1.5 var(--serif);
+        font-style: italic;
+        color: #cac6bd;
+        margin: 0 0 1.25rem;
+      }
+      .intro {
+        max-width: 39rem;
+        color: var(--muted);
+        margin: 0 0 2rem;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        border: 1px solid var(--line);
+        padding: 0.78rem 1.15rem;
+        font: 500 0.7rem var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: 0.25s;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--gold);
+        color: var(--goldl);
+      }
+      .button.primary {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #1a1711;
+      }
+      .button.primary:hover {
+        background: var(--goldl);
+        color: #000;
+      }
+      .portrait-wrap {
+        position: relative;
+        padding: 0 1.5rem 1.5rem 0;
+      }
+      .portrait-wrap:after {
+        content: "";
+        position: absolute;
+        inset: 1.5rem 0 0 1.5rem;
+        border: 1px solid var(--gold);
+        z-index: -1;
+      }
+      .portrait {
+        width: 100%;
+        height: min(62vh, 610px);
+        object-fit: cover;
+        object-position: 50% 52%;
+        filter: saturate(0.86) contrast(1.03);
+      }
+      .portrait-note {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: var(--deep);
+        border: 1px solid var(--line);
+        padding: 0.75rem 1rem;
+        font: 0.65rem var(--mono);
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+      section {
+        padding: 7rem 0;
+        border-top: 1px solid var(--line);
+      }
+      #about,
+      #projects,
+      #skills {
+        background: #12141995;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      .headline {
+        font: 500 clamp(2.2rem, 4.2vw, 3.7rem) / 1.14 var(--serif);
+        letter-spacing: -0.035em;
+        margin: 0.7rem 0 0;
+      }
+      .number {
+        font: 0.75rem var(--mono);
+        color: var(--dim);
+        padding-bottom: 0.4rem;
+      }
+      .prose {
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+      .prose p:first-child {
+        margin-top: 0;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 5rem;
+      }
+      .card,
+      .education,
+      .research,
+      .publication,
+      .project,
+      .achievement,
+      .skill,
+      .contact-card {
+        border: 1px solid var(--line);
+        background: #181a20b3;
+      }
+      .focus {
+        padding: 1.8rem;
+      }
+      .focus h3,
+      .infobox h3 {
+        margin: 0 0 1.2rem;
+        font: 500 1.25rem var(--serif);
+      }
+      .topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .topic {
+        border: 1px solid #c9a96a59;
+        color: var(--goldl);
+        font: 0.67rem var(--mono);
+        padding: 0.35rem 0.55rem;
+      }
+      .infobox {
+        padding: 1.35rem 1.55rem;
+        margin-top: 1rem;
+      }
+      .info {
+        display: flex;
+        gap: 0.8rem;
+        padding: 0.7rem 0;
+        border-top: 1px solid var(--line);
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .info:first-of-type {
+        border-top: 0;
+      }
+      .info b {
+        color: var(--gold);
+        font: 500 0.67rem var(--mono);
+        min-width: 4.8rem;
+        letter-spacing: 0.08em;
+      }
+      .education {
+        padding: 2.2rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1.5rem;
+        border-left: 3px solid var(--gold);
+      }
+      .degree {
+        margin: 0 0 0.4rem;
+        font: 500 1.55rem var(--serif);
+      }
+      .school {
+        color: var(--muted);
+        margin: 0;
+      }
+      .program {
+        margin: 0.8rem 0 0;
+        color: var(--dim);
+        font: 0.73rem var(--mono);
+      }
+      .education-meta {
+        text-align: right;
+        color: var(--gold);
+        font: 0.72rem var(--mono);
+        letter-spacing: 0.05em;
+      }
+      .gpa {
+        display: block;
+        font: 500 2rem var(--serif);
+        letter-spacing: -0.04em;
+      }
+      .research {
+        padding: clamp(1.5rem, 4vw, 3rem);
+        position: relative;
+        overflow: hidden;
+      }
+      .research:after {
+        content: "RESEARCH";
+        position: absolute;
+        right: -0.15em;
+        bottom: -0.35em;
+        font: 600 clamp(4rem, 12vw, 11rem) / 1 var(--serif);
+        letter-spacing: -0.08em;
+        color: #c9a96a0c;
+        pointer-events: none;
+      }
+      .eyebrow {
+        font: 0.7rem var(--mono);
+        color: var(--gold);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .research h3 {
+        font: 500 clamp(1.7rem, 3.5vw, 3rem) / 1.2 var(--serif);
+        max-width: 850px;
+        margin: 1rem 0;
+      }
+      .research p {
+        max-width: 800px;
+        color: var(--muted);
+        position: relative;
+        z-index: 1;
+      }
+      .research-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin: 1.4rem 0;
+      }
+      .research-tags span {
+        font: 0.67rem var(--mono);
+        padding: 0.32rem 0.55rem;
+        background: #ffffff0d;
+        color: #c8c4bc;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        position: relative;
+        z-index: 1;
+      }
+      .stat {
+        background: var(--deep);
+        padding: 1.35rem;
+      }
+      .stat strong {
+        display: block;
+        color: var(--gold);
+        font: 500 clamp(1.4rem, 2.5vw, 2.15rem) / 1.1 var(--serif);
+        letter-spacing: -0.04em;
+      }
+      .stat span {
+        display: block;
+        color: var(--dim);
+        font: 0.63rem/1.5 var(--mono);
+        letter-spacing: 0.04em;
+        margin-top: 0.45rem;
+      }
+      .methods {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem 2rem;
+        margin: 2rem 0 0;
+        padding: 1.3rem 0 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.87rem;
+      }
+      .methods div:before {
+        content: "→";
+        color: var(--gold);
+        margin-right: 0.55rem;
+      }
+      .pub-list {
+        display: grid;
+        gap: 1rem;
+      }
+      .publication {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 8rem 1fr;
+        gap: 1.5rem;
+        transition: 0.25s;
+      }
+      .publication:hover,
+      .project:hover,
+      .achievement:hover {
+        border-color: #c9a96a85;
+        transform: translateY(-3px);
+      }
+      .pub-year {
+        font: 500 1rem var(--mono);
+        color: var(--gold);
+      }
+      .pub-kind {
+        font: 0.64rem var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-top: 0.35rem;
+      }
+      .pub-title {
+        font: 500 1.35rem/1.35 var(--serif);
+        margin: 0 0 0.55rem;
+      }
+      .authors,
+      .venue,
+      .pub-description {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0.32rem 0;
+      }
+      .venue {
+        font-style: italic;
+      }
+      .out {
+        display: inline-flex;
+        margin-top: 0.8rem;
+        color: var(--gold);
+        font: 0.68rem var(--mono);
+        letter-spacing: 0.04em;
+      }
+      .out:hover {
+        text-decoration: underline;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+      .project {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 275px;
+        transition: 0.25s;
+      }
+      .project-label {
+        font: 0.66rem var(--mono);
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+      .project h3 {
+        font: 500 1.55rem var(--serif);
+        margin: 0.9rem 0;
+      }
+      .project p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin: 0 0 1.6rem;
+      }
+      .project .out {
+        margin-top: auto;
+      }
+      .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .achievement {
+        padding: 1.5rem;
+        transition: 0.25s;
+      }
+      .achievement.featured {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: minmax(210px, 0.78fr) 1fr;
+        gap: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .achievement-image {
+        width: 100%;
+        height: 100%;
+        min-height: 225px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .achievement-copy {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+      .achievement.media {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+      }
+      .achievement.media .achievement-image {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+      }
+      .achievement.media .achievement-copy {
+        flex: 1;
+      }
+      .mark {
+        color: var(--gold);
+        font: 500 1.15rem var(--serif);
+      }
+      .achievement h3 {
+        font: 500 1.1rem/1.35 var(--serif);
+        margin: 0.75rem 0 0.35rem;
+      }
+      .achievement p {
+        color: var(--dim);
+        font: 0.78rem/1.5 var(--mono);
+        margin: 0;
+      }
+      .evidence {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 1rem;
+      }
+      .evidence a {
+        color: var(--gold);
+        border: 1px solid #c9a96a59;
+        padding: 0.35rem 0.5rem;
+        font: 0.61rem var(--mono);
+        letter-spacing: 0.03em;
+        transition: 0.2s;
+      }
+      .evidence a:hover {
+        border-color: var(--gold);
+        background: #c9a96a14;
+        color: var(--goldl);
+      }
+      .achievement.media .evidence {
+        margin-top: auto;
+        padding-top: 1rem;
+      }
+      .timeline {
+        max-width: 880px;
+        border-left: 1px solid #c9a96a6b;
+        margin-left: 0.35rem;
+      }
+      .timeline-item {
+        position: relative;
+        padding: 0 0 2.65rem 2rem;
+      }
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        width: 0.65rem;
+        height: 0.65rem;
+        border: 2px solid var(--gold);
+        border-radius: 50%;
+        background: var(--black);
+        left: -0.4rem;
+        top: 0.4rem;
+      }
+      .time {
+        font: 0.68rem var(--mono);
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+      .role {
+        margin: 0.6rem 0 0.1rem;
+        font: 500 1.4rem var(--serif);
+      }
+      .org {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .role-desc {
+        color: var(--muted);
+        font-size: 0.9rem;
+        max-width: 650px;
+        margin: 0.7rem 0 0;
+      }
+      .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .skill {
+        padding: 1.5rem;
+      }
+      .skill h3 {
+        margin: 0 0 1rem;
+        font: 500 1.2rem var(--serif);
+      }
+      .skill div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .skill span {
+        color: var(--muted);
+        font: 0.67rem var(--mono);
+        padding: 0.32rem 0.45rem;
+        background: #ffffff0b;
+        border: 1px solid var(--line);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      .contact-copy {
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+      .email-action {
+        margin-top: 1.8rem;
+      }
+      .contact-card {
+        display: grid;
+      }
+      .contact-link {
+        padding: 1rem 1.2rem;
+        border-bottom: 1px solid var(--line);
+        transition: 0.2s;
+      }
+      .contact-link:last-child {
+        border-bottom: 0;
+      }
+      .contact-link:hover {
+        background: #c9a96a14;
+      }
+      .contact-link b {
+        display: block;
+        color: var(--gold);
+        font: 0.65rem var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .contact-link span {
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 2rem 0;
+        color: var(--dim);
+        font: 0.7rem var(--mono);
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .to-top {
+        position: fixed;
+        right: 1.2rem;
+        bottom: 1.2rem;
+        width: 2.7rem;
+        height: 2.7rem;
+        border: 1px solid var(--line);
+        background: var(--deep);
+        color: var(--gold);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s;
+      }
+      .to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .to-top:hover {
+        border-color: var(--gold);
+      }
+      @media (max-width: 900px) {
+        .links {
+          gap: 0.9rem;
+        }
+        .links a {
+          font-size: 0.61rem;
+        }
+        .hero-grid,
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .hero {
+          padding-top: 8rem;
+        }
+        .portrait-wrap {
+          max-width: 520px;
+        }
+        .portrait {
+          height: 520px;
+        }
+        .skill-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .achievement-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .achievement.featured {
+          grid-column: span 2;
+        }
+      }
+      @media (max-width: 680px) {
+        :root {
+          --nav: 64px;
+        }
+        .wrap {
+          width: min(calc(100% - 2rem), var(--max));
+        }
+        .menu {
+          display: block;
+          z-index: 2;
+        }
+        .links {
+          display: none;
+        }
+        .links.open {
+          display: flex;
+          position: absolute;
+          top: var(--nav);
+          left: 0;
+          right: 0;
+          min-height: calc(100vh - var(--nav));
+          background: #0c0d0ffb;
+          padding: 2rem;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1.8rem;
+        }
+        .links.open a {
+          font-size: 0.8rem;
+        }
+        .hero h1 {
+          font-size: clamp(3.1rem, 16vw, 4.7rem);
+        }
+        section {
+          padding: 4.7rem 0;
+        }
+        .section-head {
+          display: block;
+          margin-bottom: 2.2rem;
+        }
+        .number {
+          display: none;
+        }
+        .portrait {
+          height: 440px;
+        }
+        .education,
+        .publication,
+        .achievement.featured {
+          grid-template-columns: 1fr;
+        }
+        .education-meta {
+          text-align: left;
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .methods {
+          grid-template-columns: 1fr;
+        }
+        .project-grid,
+        .contact-grid,
+        .achievement-grid,
+        .skill-grid {
+          grid-template-columns: 1fr;
+        }
+        .achievement.featured {
+          grid-column: span 1;
+        }
+        .achievement-image {
+          min-height: 0;
+          aspect-ratio: 16 / 9;
+        }
+        .publication {
+          padding: 1.5rem;
+        }
+        .pub-year {
+          font-size: 0.8rem;
+        }
+        .portrait-note {
+          font-size: 0.55rem;
+        }
+        .actions .button {
+          width: 100%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *:before,
+        *:after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+    <header class="topbar" id="topbar">
+      <nav class="nav wrap" aria-label="Primary navigation">
+        <a class="brand" href="#home">Tasfia<span>.</span></a
+        ><button
+          class="menu"
+          id="menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          Menu
+        </button>
+        <ul class="links" id="nav-links">
+          <li><a href="#about">Profile</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="overline">Research portfolio · Dhaka, Bangladesh</p>
+            <h1>Tasfia<br>Jannat <em>Tasfi.</em></h1>
+            <p class="subtitle">
+              NLP · Trustworthy AI · Software Systems
+            </p>
+            <p class="intro">
+              Computer Science and Engineering graduate building and studying
+              reliable AI-enabled systems. I am interested in NLP, LLMs,
+              uncertainty-aware decision support, and tools that help people use
+              AI outputs responsibly.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#research">View research ↓</a
+              ><a class="button" href="#publications">Publications</a
+              ><a class="button" href="Tasfia_Jannat_Tasfi_CV.pdf" download
+                >Download CV</a
+              >
+            </div>
+          </div>
+          <div class="portrait-wrap">
+            <img
+              class="portrait"
+              src="IMG_20260121_223602.png"
+              alt="Portrait of Tasfia Jannat Tasfi"
+            ><span class="portrait-note">NLP · TRUSTWORTHY AI · SYSTEMS</span>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">01 · Research profile</p>
+              <h2 class="headline">
+                Building AI systems people can <em>understand and trust.</em>
+              </h2>
+            </div>
+            <span class="number">PROFILE / 01</span>
+          </div>
+          <div class="about-grid">
+            <div class="prose">
+              <p>
+                I am interested in designing reliable AI-enabled software and
+                studying how NLP and LLM-based systems can support better
+                decisions. My undergraduate thesis combines an NLP backend,
+                uncertainty calibration, web-based explanation interfaces, and a
+                controlled user study for AI-assisted medical misinformation
+                detection.
+              </p>
+              <p>
+                I enjoy building end-to-end research prototypes and evaluating
+                their behavior with both system-level metrics and human-centered
+                studies. I hope to pursue research on reliable AI systems,
+                including NLP/LLM-assisted software engineering, information
+                retrieval, and uncertainty-aware developer or user tools.
+              </p>
+            </div>
+            <aside>
+              <div class="card focus">
+                <h3>Research interests</h3>
+                <div class="topics">
+                  <span class="topic">Natural Language Processing</span
+                  ><span class="topic">Large Language Models</span
+                  ><span class="topic">Trustworthy AI</span
+                  ><span class="topic">Software Engineering</span
+                  ><span class="topic">Information Retrieval</span
+                  ><span class="topic">Explainable AI</span
+                  ><span class="topic">Uncertainty Calibration</span
+                  ><span class="topic">Human–AI Interaction</span>
+                </div>
+              </div>
+              <div class="card infobox">
+                <h3>At a glance</h3>
+                <div class="info">
+                  <b>BASED</b><span>Dhaka, Bangladesh</span>
+                </div>
+                <div class="info">
+                  <b>DISCIPLINE</b
+                  ><span>Computer Science &amp; Engineering</span>
+                </div>
+                <div class="info">
+                  <b>FOCUS</b><span>NLP, Trustworthy AI &amp; Software Systems</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section id="education">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">02 · Education</p>
+              <h2 class="headline">Academic <em>foundation.</em></h2>
+            </div>
+            <span class="number">EDUCATION / 02</span>
+          </div>
+          <article class="education">
+            <div>
+              <h3 class="degree">B.Sc. in Computer Science and Engineering</h3>
+              <p class="school">
+                Rajshahi University of Engineering &amp; Technology (RUET) ·
+                Rajshahi, Bangladesh
+              </p>
+              <p class="program">BAETE-ACCREDITED CSE PROGRAM</p>
+            </div>
+            <div class="education-meta">
+              <span class="gpa">3.77 / 4.00</span>CGPA<br><br>11 AUGUST 2026
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="research">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">03 · Research experience</p>
+              <h2 class="headline">
+                Making AI-assisted decisions <em>more reliable.</em>
+              </h2>
+            </div>
+            <span class="number">THESIS / 03</span>
+          </div>
+          <article class="research">
+            <p class="eyebrow">Undergraduate thesis</p>
+            <h3>
+              Designing and Evaluating Explanation Interfaces for AI-Assisted
+              Medical Misinformation Detection
+            </h3>
+            <div class="research-tags">
+              <span>NLP</span><span>Trustworthy AI</span
+              ><span>Uncertainty Calibration</span><span>Explainable AI</span
+              ><span>End-to-End Research System</span>
+            </div>
+            <p>
+              Designed and implemented an end-to-end research system with a
+              RoBERTa-based NLP backend and four web explanation interfaces.
+              It communicates AI assessments, linguistic indicators, calibrated
+              probabilities, uncertainty, evidence, and sources, then evaluates
+              both model behavior and human use through a controlled study.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <strong>4</strong><span>EXPLANATION INTERFACES</span>
+              </div>
+              <div class="stat">
+                <strong>60</strong><span>STUDY PARTICIPANTS</span>
+              </div>
+              <div class="stat">
+                <strong>1,200</strong><span>JUDGMENT TRIALS</span>
+              </div>
+              <div class="stat">
+                <strong>17,611</strong><span>CORPUS SAMPLES</span>
+              </div>
+            </div>
+            <div class="methods">
+              <div>Judgment accuracy: 73.7% → 90.0%</div>
+              <div>Over-reliance: 77.8% → 37.8%</div>
+                <div>RoBERTa NLP backend with uncertainty calibration</div>
+                <div>Conformal selective prediction for reliable automation</div>
+              <div>91.56% of cases automatically handled</div>
+              <div>Macro-F1 of 0.9806</div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="publications">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">04 · Publications</p>
+              <h2 class="headline">Peer-reviewed <em>research.</em></h2>
+            </div>
+            <span class="number">WORK / 04</span>
+          </div>
+          <div class="pub-list">
+            <article class="publication">
+              <div>
+                <div class="pub-year">2025</div>
+                <div class="pub-kind">Conference paper</div>
+              </div>
+              <div>
+                <h3 class="pub-title">
+                  Beyond Artifacts: Semantic Deepfake Detection and Digital
+                  Provenance Tracking with Multimodal Large Language Models.
+                </h3>
+                <p class="authors">
+                  Jabunnesa Jahan Sara, Shahriar Rizvi, and Tasfia Jannat Tasfi.
+                </p>
+                <p class="venue">
+                  2025 28th International Conference on Computer and Information
+                  Technology (ICCIT), 2025.
+                </p>
+                <p class="pub-description">
+                  Developed a multimodal pipeline for semantic deepfake analysis
+                  and web-based provenance tracing, moving beyond purely visual
+                  artifact detection.
+                </p>
+                <a
+                  class="out"
+                  href="https://doi.org/10.1109/ICCIT68739.2025.11490141"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >DOI: 10.1109/ICCIT68739.2025.11490141 ↗</a
+                >
+              </div>
+            </article>
+            <article class="publication">
+              <div>
+                <div class="pub-year">2026</div>
+                <div class="pub-kind">Conference paper</div>
+              </div>
+              <div>
+                <h3 class="pub-title">
+                  Evaluating Creative Reasoning and Lateral Thinking in
+                  Instruction-Tuned LLMs for Bengali.
+                </h3>
+                <p class="authors">
+                  Nahid Montasir Rifat, Tasfia Jannat Tasfi, Foyez Ahmed Dewan,
+                  and Barshon Sen.
+                </p>
+                <p class="venue">
+                  2026 IEEE 2nd International Conference on Quantum Photonics,
+                  Artificial Intelligence &amp; Networking (QPAIN), 2026.
+                </p>
+                <p class="pub-description">
+                  Built a parallel Bangla–English benchmark for
+                  instruction-tuned LLMs and analyzed cross-lingual failure
+                  modes such as mistranslation, cultural mismatch, and logical
+                  inconsistency.
+                </p>
+                <a
+                  class="out"
+                  href="https://doi.org/10.1109/QPAIN69676.2026.11546604"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >DOI: 10.1109/QPAIN69676.2026.11546604 ↗</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">05 · Selected projects</p>
+              <h2 class="headline">
+                Research systems built for <em>useful, reliable AI.</em>
+              </h2>
+            </div>
+            <span class="number">PROJECTS / 05</span>
+          </div>
+          <div class="project-grid">
+            <article class="project">
+              <span class="project-label">AI-assisted decision support</span>
+              <h3>EarlyMind</h3>
+              <p>
+                Built an interactive AI-assisted assessment interface with
+                adaptive dashboards and progress feedback, emphasizing clear
+                communication of system feedback during decision support.
+              </p>
+              <a
+                class="out"
+                href="https://github.com/Shion115/EarlyMind"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View on GitHub ↗</a
+              >
+            </article>
+            <article class="project">
+              <span class="project-label">LLM &amp; information retrieval</span>
+              <h3>BongoSeek</h3>
+              <p>
+                Built a conversational search system with context-aware query
+                handling and dialogue memory for coherent multi-turn
+                interaction—an applied exploration of LLM-enabled information
+                access.
+              </p>
+              <a
+                class="out"
+                href="https://github.com/Shion115/Bongo_Seek"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View on GitHub ↗</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="achievements">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">06 · Achievements</p>
+              <h2 class="headline">Recognition and <em>awards.</em></h2>
+            </div>
+            <span class="number">HONOURS / 06</span>
+          </div>
+          <div class="achievement-grid">
+            <article class="achievement media">
+              <img
+                class="achievement-image"
+                src="Waymakers.jpeg"
+                alt="WayMakers team holding their University Innovation Hub Program award cheque"
+              >
+              <div class="achievement-copy">
+                <span class="mark">01</span>
+                <h3>1st Place, UIHP 5th Cohort (WayMakers)</h3>
+                <p>
+                  Startup innovation, market validation, and MVP development.
+                  · 2025
+                </p>
+              </div>
+            </article>
+            <article class="achievement media">
+              <img
+                class="achievement-image"
+                src="Huawei.jpg"
+                alt="Bangladeshi delegation at the Asia-Pacific Digital Talent Summit 2024"
+              >
+              <div class="achievement-copy">
+                <span class="mark">02</span>
+                <h3>
+                  Champion, Huawei Seeds for the Future Tech-Business Competition
+                </h3>
+                <p>2024</p>
+                <div class="evidence">
+                  <a
+                    href="https://www.facebook.com/share/p/18Q1J3pZfQ/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Facebook post ↗</a
+                  >
+                  <a
+                    href="https://www.thedailystar.net/tech-startup/news/10-bangladeshi-students-participate-seeds-the-future-regional-round-china-3711576"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >The Daily Star ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article class="achievement media">
+              <img
+                class="achievement-image"
+                src="Hult_prize.jpeg"
+                alt="Hult Prize at RUET champion team holding their award cheque"
+              >
+              <div class="achievement-copy">
+                <span class="mark">03</span>
+                <h3>Champion, Hult Prize at RUET</h3>
+                <p>Startup Innovation, 2023</p>
+              </div>
+            </article>
+            <article class="achievement">
+              <span class="mark">04</span>
+              <h3>Government General Scholarship</h3>
+              <p>Awarded for all four years of undergraduate study.</p>
+            </article>
+            <article class="achievement">
+              <span class="mark">05</span>
+              <h3>Finalist, International Youth Math Challenge</h3>
+              <p>Top 20% globally, 2024</p>
+            </article>
+            <article class="achievement">
+              <span class="mark">06</span>
+              <h3>70% Merit Scholarship, ISCEA PTAK Prize</h3>
+              <p>2024</p>
+            </article>
+            <article class="achievement">
+              <span class="mark">07</span>
+              <h3>Government Talent Pool Scholarship</h3>
+              <p>Awarded for academic excellence in high school.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="experience">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">
+                07 · Professional &amp; leadership experience
+              </p>
+              <h2 class="headline">
+                Software built across <em>research, community, and product.</em>
+              </h2>
+            </div>
+            <span class="number">EXPERIENCE / 07</span>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="time">Nov. 2024 – Present</div>
+              <h3 class="role">Co-Founder — Delibro</h3>
+              <div class="org">
+                Social Computing Platform for Community-Based Delivery
+              </div>
+              <p class="role-desc">
+                Co-founded a community-oriented delivery platform centered on
+                trust, reciprocity, safety, and human connection; contributed to
+                interface design, prototyping, product development, and
+                user-oriented validation. Supported through the World
+                Bank-supported University Innovation Hub.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <div class="time">Jun. 2025 – Present</div>
+              <h3 class="role">Official Ambassador</h3>
+              <div class="org">International Computer Science Competition</div>
+            </article>
+            <article class="timeline-item">
+              <div class="time">Mar. 2025</div>
+              <h3 class="role">Industrial Trainee</h3>
+              <div class="org">BRAC IT</div>
+              <p class="role-desc">
+                Worked on front-end interface design and web-development
+                workflows.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <div class="time">Jun. 2022 – Jan. 2023</div>
+              <h3 class="role">App Developer</h3>
+              <div class="org">bdapps</div>
+              <p class="role-desc">
+                Developed and deployed PHP-based applications involving
+                interface design, backend integration, and deployment.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="skills">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">08 · Research &amp; technical skills</p>
+              <h2 class="headline">
+                Methods, tools, and <em>prototyping.</em>
+              </h2>
+            </div>
+            <span class="number">SKILLS / 08</span>
+          </div>
+          <div class="skill-grid">
+            <article class="skill">
+              <h3>Research &amp; Evaluation</h3>
+              <div>
+                <span>Controlled Experiments</span><span>User Studies</span
+                ><span>Interface Evaluation</span><span>Classification Metrics</span
+                ><span>Research Prototyping</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>Reliable AI Methods</h3>
+              <div>
+                <span>Experimental Evaluation</span><span>Uncertainty Calibration</span
+                ><span>Conformal Prediction</span
+                ><span>Selective Prediction</span><span>Appropriate Reliance</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>Research Systems</h3>
+              <div>
+                <span>Next.js</span><span>JavaScript</span><span>HTML/CSS</span
+                ><span>FastAPI</span><span>Flask</span><span>Figma</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>NLP &amp; LLMs</h3>
+              <div>
+                <span>Python</span><span>Transformers</span><span>RoBERTa</span
+                ><span>Hugging Face Transformers</span><span>scikit-learn</span
+                ><span>LLM Evaluation</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>Programming &amp; Tools</h3>
+              <div>
+                <span>Python</span><span>C++</span><span>JavaScript</span
+                ><span>PHP</span><span>Git</span><span>Jupyter Notebook</span
+                ><span>Google Colab</span><span>pandas</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="kicker">09 · Contact</p>
+              <h2 class="headline">
+                Open to thoughtful <em>research conversations.</em>
+              </h2>
+            </div>
+            <span class="number">CONTACT / 09</span>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-copy">
+              <p>
+                I welcome research collaborations, academic networking, and
+                opportunities in NLP, trustworthy AI, software engineering, and
+                human-centered evaluation of AI systems.
+              </p>
+              <a
+                class="button primary email-action"
+                href="mailto:tj2003115@gmail.com"
+                >Email me ↗</a
+              >
+            </div>
+            <div class="contact-card">
+              <a class="contact-link" href="mailto:tj2003115@gmail.com"
+                ><b>Email</b><span>tj2003115@gmail.com</span></a
+              ><a
+                class="contact-link"
+                href="https://linkedin.com/in/tasfia-jannat-tasfi"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>LinkedIn</b
+                ><span>linkedin.com/in/tasfia-jannat-tasfi ↗</span></a
+              ><a
+                class="contact-link"
+                href="https://github.com/Shion115"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>GitHub</b><span>github.com/Shion115 ↗</span></a
+              >
+              <div class="contact-link">
+                <b>Location</b><span>Dhaka, Bangladesh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <span>© <span id="year"></span> Tasfia Jannat Tasfi</span
+        ><span>NLP · TRUSTWORTHY AI · SOFTWARE SYSTEMS</span>
+      </div>
+    </footer>
+    <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
+    <script>
+      const menu = document.getElementById("menu"),
+        links = document.getElementById("nav-links"),
+        topbar = document.getElementById("topbar"),
+        back = document.getElementById("to-top");
+      menu.addEventListener("click", () => {
+        const open = links.classList.toggle("open");
+        menu.setAttribute("aria-expanded", open);
+        menu.textContent = open ? "Close" : "Menu";
+      });
+      links.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          links.classList.remove("open");
+          menu.setAttribute("aria-expanded", "false");
+          menu.textContent = "Menu";
+        }),
+      );
+      const onScroll = () => {
+        topbar.classList.toggle("scrolled", scrollY > 8);
+        back.classList.toggle("show", scrollY > 650);
+      };
+      addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      back.addEventListener("click", () =>
+        scrollTo({ top: 0, behavior: "smooth" }),
+      );
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const navItems = [...links.querySelectorAll("a")],
+        observer = new IntersectionObserver(
+          (e) =>
+            e.forEach((x) => {
+              if (x.isIntersecting)
+                navItems.forEach((a) =>
+                  a.classList.toggle(
+                    "active",
+                    a.getAttribute("href") === "#" + x.target.id,
+                  ),
+                );
+            }),
+          { rootMargin: "-35% 0px -55% 0px" },
+        );
+      document
+        .querySelectorAll("main section[id]")
+        .forEach((s) => observer.observe(s));
+    </script>
+  </body>
+</html>
