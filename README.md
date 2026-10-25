@@ -1,8 +1,8 @@
-# Tasfia Jannat Tasfi — NLP Research Portfolio
+# Tasfia Jannat Tasfi — NLP, LLMs & Multimodal AI Portfolio
 
-A static, GitHub Pages-ready academic portfolio emphasizing Tasfia's demonstrated work in NLP, LLMs, uncertainty-aware AI systems, and research prototyping, alongside interests in reliable AI and software-engineering research.
+A static, GitHub Pages-ready academic portfolio emphasizing Tasfia's demonstrated work in multilingual LLM evaluation, multimodal AI, uncertainty-aware NLP systems, and human-centered AI research.
 
-This is an application-specific version of the main portfolio. It does not replace the original `portfolio` repository.
+This repository publishes the portfolio at `https://shion115.github.io/website/`.
 
 ## Use locally
 
@@ -10,10 +10,9 @@ Open `index.html` in a modern browser. No build tools, server, API keys, or depe
 
 ## Deploy to GitHub Pages
 
-1. Create a public repository named `tasfia-nlp-research` under the `Shion115` GitHub account.
-2. Push the files in this folder to the repository root.
-3. In GitHub, go to **Settings → Pages**. Select **Deploy from a branch**, then choose `main` and `/ (root)`.
-4. The site will publish at `https://shion115.github.io/tasfia-nlp-research/`.
+1. Commit and push the updated files in this repository to the `main` branch.
+2. In GitHub, go to **Settings → Pages**. Select **Deploy from a branch**, then choose `main` and `/ (root)`.
+3. The site will publish at `https://shion115.github.io/website/`.
 
 For the complete browser-upload and PowerShell instructions, see [PUBLISHING.md](PUBLISHING.md).
 
